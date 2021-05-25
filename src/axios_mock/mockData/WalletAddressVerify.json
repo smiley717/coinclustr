@@ -1,0 +1,23 @@
+{
+  "active": true,
+  "category": "string",
+  "forwardingAddress": "string",
+  "name": "string",
+  "type": "BITCOIN",
+  "userId": "string",
+  "walletId": "string",
+  "webhookUrl": "string",
+  "widget": [
+    {
+      "amount": 0,
+      "codeSnippet": "string",
+      "id": "string",
+      "walletCategory": "string",
+      "walletId": "string",
+      "widgetDescription": "string",
+      "widgetName": "string",
+      "widgetPaymentType": "FIXED_PRICE",
+      "widgetTitle": "string"
+    }
+  ]
+}

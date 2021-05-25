@@ -1,0 +1,11 @@
+[
+  {
+    "walletId": "1016b9d857afb5e5a63388173eceb014c85055f1",
+    "userId": "f28fe12706c44c5be7c8ac7ec8329ceb268bb142",
+    "webhookUrl": null,
+    "type": "BITCOIN",
+    "unconfirmedBalance": 0,
+    "confirmedBalance": 1.37584510,
+    "category": "BUILTIN"
+  }
+]

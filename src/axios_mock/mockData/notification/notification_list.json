@@ -1,0 +1,56 @@
+[
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "INVOICE_UPDATED",
+    "eventResourceId": "invoiceId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "You have a new status for your Invoice",
+    "deleted": false
+  },
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "PAYMENT_RECEIVED",
+    "eventResourceId": "paymentId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "You have received a payment from test@email.com of 0.001 in bitcoin",
+    "deleted": false
+  },
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "INVOICE_COMPLETE",
+    "eventResourceId": "invoiceId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "Your invoice is now complete",
+    "deleted": false
+  },
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "SUBSCRIPTION_DUE",
+    "eventResourceId": "subscriptionId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "Your subscription payment is due on 01-07-2021",
+    "deleted": true
+  },
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "SUBSCRIPTION_DUE",
+    "eventResourceId": "subscriptionId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "Your subscription payment was completed",
+    "deleted": false
+  },
+  {
+    "notificationId": "48579cdb-6997-46da-9e93-4ca817526433",
+    "userId": "1f5a07a548eb6ff1bbb4a1a78cf07ba41e09e55f",
+    "event": "SUBSCRIPTION_OVERDUE",
+    "eventResourceId": "subscriptionId",
+    "timestamp": "2021-03-06T00:50:32.01",
+    "message": "Your subscription payment is since on 01-07-2021",
+    "deleted": false
+  }
+]

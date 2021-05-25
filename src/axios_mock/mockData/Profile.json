@@ -1,0 +1,17 @@
+{
+  "userId": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+  "walletAdress": "14qViLJfdGaP4EeHnDyJbEGQysnCpwk3gd",
+  "fullname": "Bobby Brown",
+  "phoneNumber": "4402012345678",
+  "password": "$2a$10$XvYlqinpQdQ7OLc47hmRBuiWa9gFLPyYLJ4p3lf/2OIi2h/vtMINy",
+  "email": "testaccount@test.com",
+  "emailVerified": false,
+  "mfa": false,
+  "created": "2020-07-18T12:16:44.582",
+  "subscribedEndDate": "2020-07-17T12:16:44.582",
+  "access": 0,
+  "accountType": "BASIC",
+  "accountBalance": 50,
+  "active": true,
+  "hasGateways": 0
+}

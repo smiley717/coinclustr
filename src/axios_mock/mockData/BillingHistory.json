@@ -1,0 +1,32 @@
+{
+  "content": [
+    {
+      "userId": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+      "billingId": "sample1",
+      "description": "Monthly Premium Subscription",
+      "uom": "$",
+      "amount": 7,
+      "timestamp": "2020-07-01T12:16:44.582",
+      "complete": true
+    },
+    {
+      "userId": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+      "billingId": "sample2",
+      "description": "Monthly Premium Subscription",
+      "uom": "$",
+      "amount": 7,
+      "timestamp": "2020-06-01T12:16:44.582",
+      "complete": true
+    },
+    {
+      "userId": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+      "billingId": "sample3",
+      "description": "Monthly Premium Subscription",
+      "uom": "$",
+      "amount": 7,
+      "timestamp": "2020-05-01T12:16:44.582",
+      "complete": true
+    }
+  ],
+  "totalElements": 3
+}

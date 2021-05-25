@@ -1,0 +1,66 @@
+{
+  "content": [
+    {
+      "builtInWalletId": "1016b9d857afb5e5a63388173eceb014c85055f1",
+      "complete": true,
+      "confirmed": 0,
+      "createdOn": "2021-04-23T16:01:30.735Z",
+      "expireAt": "2021-04-23",
+      "lastModified": "2021-04-23T16:01:30.735Z",
+      "paymentInfo": {
+        "paymentRefs": [
+          "1016b9d857afb5e5a63388173"
+        ],
+        "received": 0,
+        "transactions": [
+          {
+            "amount": 10.12345,
+            "blockChainHash": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+            "confirms": 0,
+            "created": "2021-04-23T16:01:30.735Z",
+            "lastModified": "2021-04-23T16:01:30.735Z",
+            "status": "COMPLETE"
+          },
+          {
+            "amount": 0.000112312,
+            "blockChainHash": "a06a50864261fdbebe9a41ad940b094ad1123",
+            "confirms": 48,
+            "created": "2021-03-03T16:01:30.735Z",
+            "lastModified": null,
+            "status": "PENDING"
+          }
+        ]
+      },
+      "sendToAddress": "sendToAddress_a06a50864261fdbebe9a41ad940b0",
+      "status": "COMPLETE",
+      "topUpId": "topUpId_a06a50864261fdbebe9a41ad940b0",
+      "type": "BITCOIN",
+      "unconfirmed": 0
+    }
+  ],
+  "empty": true,
+  "first": true,
+  "last": true,
+  "number": 0,
+  "numberOfElements": 0,
+  "pageable": {
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 0,
+    "paged": true,
+    "sort": {
+      "empty": true,
+      "sorted": true,
+      "unsorted": true
+    },
+    "unpaged": true
+  },
+  "size": 0,
+  "sort": {
+    "empty": true,
+    "sorted": true,
+    "unsorted": true
+  },
+  "totalElements": 0,
+  "totalPages": 0
+}

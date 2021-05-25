@@ -1,0 +1,16 @@
+{
+    "emailVerified": false,
+    "mfaSettings": {
+      "countryCode": "GB",
+      "mfa": false,
+      "phoneNumber": "+7977777777",
+      "status": "CONFIRMED"
+    },
+    "phoneNumberDetails": {
+      "confirmationRequired": false,
+      "countryCode": "GB",
+      "pendingPhoneNumber": null,
+      "phoneNumber": "+7977777777",
+      "phoneNumberVerified": true
+    }
+  }

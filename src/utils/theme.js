@@ -1,0 +1,40 @@
+// need to re-factor the name based on tailwind
+const theme = {
+  colors: {
+    borderColor: "#CED3D7",
+    blueIconColor: "#2F80ED",
+    green: "#27AE60",
+    red: "#EB5757",
+    darkGreenColor: "#20AF5F",
+    baseTextColor: "#45484C",
+    primaryYellowColor: "#D7D86A",
+    grayColor: "#FAFAFA",
+    lighterPrimaryColor: "#A5CCFF",
+    tagTextColor: "#1C1C1C",
+    tagPendingColor: "#A5CCFF",
+    tagUnderpaidColor: "#97FFB6",
+    tagCompletedColor: "#80E8AE",
+    tagExpiredColor: "#F8BAAE",
+    lightBlueColor: "#D8E9FF",
+    gray20: "#8A9197",
+    gray40: "#686D71",
+    gray50: "#575A5F",
+    gray80: "#232426",
+    primaryBlueColor: "#1D66FF",
+    whiteColor: "#fff",
+    alertDefaultDescriptionColor: "#797F84",
+    cardBorderColor: "#DEE1E5",
+    walletBackground: "rgba(33, 150, 83, 0.15)",
+    creditcardFaceBackground: "rgba(255, 100, 26, .15)",
+    creditcardIncomeBackground: "rgba(2, 71, 165, .15)",
+    bitcoinBackground: "rgba(102, 102, 255, .15)",
+    completeBackground: "rgba(39, 174, 96, .15)",
+    openBackground: "rgba(242, 201, 76, .15)",
+    underpaidBackground: "rgba(235, 87, 87, .15)",
+  },
+  fonts: {
+    primaryFont: "'Poppins', sans-serif",
+  },
+};
+
+export default theme;

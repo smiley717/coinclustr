@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "action": "string",
+      "id": "string",
+      "ipAddress": "string",
+      "timestamp": "2021-02-08T18:03:49.873Z",
+      "userAgent": "string",
+      "username": "string"
+    }
+  ],
+  "totalElements": 1
+}

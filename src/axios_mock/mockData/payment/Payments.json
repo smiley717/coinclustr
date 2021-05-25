@@ -1,0 +1,70 @@
+{
+  "content": [
+    {
+      "action": "P2P",
+      "amount": 0.0001,
+      "createdAt": "2021-03-01T08:16:56.965Z",
+      "id": "string",
+      "proposalExpiresAt": "2021-03-01T08:16:56.965Z",
+      "sender": {
+        "email": "test@test.com",
+        "fullName": "test account",
+        "userId": "USER_ID"
+      },
+      "senderWalletId": "string",
+      "toAddress": "string",
+      "toPeer": {
+        "email": "toPeer@email.address",
+        "fullName": "toPeer fullName",
+        "userId": "toPeer-sdfsdfdddd-ea7af5fsdf-sdfes-sdfsd"
+      },
+      "type": "BITCOIN"
+    },
+    {
+      "action": "P2P",
+      "amount": 0.0001,
+      "createdAt": "2021-03-01T08:16:56.965Z",
+      "id": "string",
+      "proposalExpiresAt": "2021-03-01T08:16:56.965Z",
+      "senderId": "string",
+      "sender": {
+        "email": "test@test.com",
+        "fullName": "test account",
+        "userId": "USER_ID"
+      },
+      "senderWalletId": "string",
+      "toAddress": "string",
+      "toPeer": {
+        "email": "toPeer@email.address",
+        "fullName": "toPeer fullName",
+        "userId": "toPeer-sdfsdfdddd-ea7af5fsdf-sdfes-sdfsd"
+      },
+      "type": "BITCOIN"
+    }
+  ],
+  "empty": true,
+  "first": true,
+  "last": true,
+  "number": 0,
+  "numberOfElements": 0,
+  "pageable": {
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 0,
+    "paged": true,
+    "sort": {
+      "empty": true,
+      "sorted": true,
+      "unsorted": true
+    },
+    "unpaged": true
+  },
+  "size": 0,
+  "sort": {
+    "empty": true,
+    "sorted": true,
+    "unsorted": true
+  },
+  "totalElements": 0,
+  "totalPages": 0
+}

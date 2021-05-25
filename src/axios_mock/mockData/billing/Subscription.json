@@ -1,0 +1,10 @@
+{
+    "builtInWalletId": "string",
+    "createdOn": "2021-02-08T17:55:30.591Z",
+    "lastModified": "2021-02-08T17:55:30.591Z",
+    "subscriptionEndDate": "string",
+    "subscriptionId": "string",
+    "subscriptionType": "BASIC",
+    "userId": "string",
+    "username": "string"
+}

@@ -1,0 +1,16 @@
+{
+  "walletId": "newWallet",
+  "userId": "edbf10109e7b6dded5a1740168dcb4a80b5cd84e",
+  "name": "",
+  "forwardingAddress": "",
+  "webhook_url": "",
+  "type": "",
+  "duration": 30,
+  "confirms": 2,
+  "fee": 0,
+  "includeFee": false,
+  "active": true,
+  "created": "1970-01-01T00:00:00.000",
+  "privateKey": "a1f1239eff7a44a5886ec834763c9f3e",
+  "key": "64a12a6ac9034049804f5ab930a609cd"
+}

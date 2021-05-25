@@ -1,0 +1,29 @@
+{
+  "builtInWalletId": "1016b9d857afb5e5a63388173eceb014c85055f1",
+  "complete": true,
+  "confirmed": 0,
+  "createdOn": "2021-04-23T16:01:30.735Z",
+  "expireAt": "2021-04-23",
+  "lastModified": "2021-04-23T16:01:30.735Z",
+  "paymentInfo": {
+    "paymentRefs": [
+      "1016b9d857afb5e5a63388173"
+    ],
+    "received": 0,
+    "transactions": [
+      {
+        "amount": 0,
+        "blockChainHash": "a06a50864261fdbebe9a41ad940b094ad1acf2fb",
+        "confirms": 0,
+        "created": "2021-04-23T16:01:30.735Z",
+        "lastModified": "2021-04-23T16:01:30.735Z",
+        "status": "COMPLETE"
+      }
+    ]
+  },
+  "sendToAddress": "sendToAddress_a06a50864261fdbebe9a41ad940b0",
+  "status": "COMPLETE",
+  "topUpId": "topUpId_a06a50864261fdbebe9a41ad940b0",
+  "type": "BITCOIN",
+  "unconfirmed": 0
+}

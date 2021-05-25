@@ -1,0 +1,16 @@
+{
+  "action": "P2P",
+  "amount": 0.0001,
+  "createdAt": "2021-03-27T20:42:58.574Z",
+  "id": "ea7af5fsdf-sdfes-sdfsd-sdfsdfdddd",
+  "proposalExpiresAt": "2021-03-27T20:42:58.574Z",
+  "senderId": "senderId-654321",
+  "senderWalletId": "Senders-wallet-address",
+  "toAddress": "toAddress-222111",
+  "toPeer": {
+    "email": "toPeer@email.address",
+    "fullName": "toPeer fullName",
+    "userId": "toPeer-sdfsdfdddd-ea7af5fsdf-sdfes-sdfsd"
+  },
+  "type": "BITCOIN"
+}

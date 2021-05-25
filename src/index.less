@@ -1,0 +1,78 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "~antd/dist/antd.less";
+@import "~antd/dist/antd.css";
+
+body {
+  background-color: #f5f7fa;
+  font-family: "Poppins", sans-serif !important;
+  .ant-message-notice-content {
+    border-radius: 3px;
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    pointer-events: all;
+    .ant-message-custom-content {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 128, 237, 0.1);
+    backdrop-filter: saturate(180%) blur(2px);
+    z-index: 10;
+  }
+  .react-tel-input {
+    font-family: "Poppins", sans-serif;
+    width: 300px;
+    margin: 0px auto;
+    margin-bottom: 8px;
+  }
+  .react-tel-input .form-control {
+    border: 1px solid #ced3d7;
+  }
+  .react-tel-input.error .form-control {
+    border: 1px solid #eb5757;
+  }
+  .react-tel-input .flag-dropdown {
+    background-color: transparent;
+  }
+  .otp-input input {
+    border: none;
+    border-bottom: 2px solid #1d66ff;
+    color: #686d71;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  /* Dropdown */
+  .ant-dropdown-menu {
+    background: #ffffff !important;
+    box-shadow: 3px 8px 40px rgba(13, 5, 37, 0.08) !important;
+    border-radius: 8px !important;
+  }
+  .spin {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .active-state .ant-timeline-item-tail {
+    border-left: 2px solid #1d66ff !important;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

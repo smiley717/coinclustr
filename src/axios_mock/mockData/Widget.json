@@ -1,0 +1,11 @@
+{
+    "id": "1d056d82e10b3b4770ef036e0f4cdec7de42d273",
+    "walletId": "79ec0b8a68ca37eb6d99558c0462ab91f68df9fc",
+    "walletCategory": "SYNCED",
+    "widgetName": "Test Widget",
+    "amount": 10,
+    "widgetPaymentType": "FIXED_PRICE",
+    "widgetTitle": "Test Widget",
+    "widgetDescription": "Test Widget",
+    "codeSnippet": null
+}

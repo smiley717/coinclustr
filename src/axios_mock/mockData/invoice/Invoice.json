@@ -1,0 +1,17 @@
+{
+  "invoiceId": "942f8140-9520-4355-88ea-facac788de70",
+  "amount": 0.00001,
+  "totalTransactionFee": 0.000201,
+  "sendToAddress": "mmapZavAjcik38C7bq4RCYMaXee4CxbbCc",
+  "serviceType": "BITCOIN",
+  "status": "COMPLETE",
+  "lastModified": "2020-03-28T16:58:44.164",
+  "created": "2020-03-28T16:56:51.937",
+  "walletInfo": {
+    "walletName": "test wallet"
+  },
+  "paymentInfo": {
+    "received": 0.0002,
+    "paymentRefs": ["BbZkyJkx", "jcEN6sHE"]
+  }
+}
