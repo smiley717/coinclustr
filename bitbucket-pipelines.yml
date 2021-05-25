@@ -1,0 +1,112 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: timbru31/java-node
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script:
+          - npm install
+          #          - npm test
+#          - if [ $SONARQUBE_ENABLED = true ] ; then
+#            npm run sonar-scanner;
+#            fi
+#          - npm install tailwindcss@latest postcss@latest autoprefixer@latest
+          - npm uninstall tailwindcss postcss autoprefixer
+          - npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+          - CI=false npm run build
+          - tar -czvf project.tar.gz build startup.sh Dockerfile
+          - ls
+        services:
+          - docker
+        artifacts:
+          - project.tar.gz
+    - step:
+        #trigger: manual
+        name: Deploy to Dev
+        deployment: dev
+        image: python:latest
+        # trigger: manual  # Uncomment to make this a manual deployment.
+        script:
+          - echo "Deploying to test environment"
+          #          - Create or delete prod env
+          - git clone git@bitbucket.org:cclustr/cc-scripts.git
+          - chmod 777 cc-scripts/update_droplet_script.py
+          - chmod 777 cc-scripts/generate_config_js.sh
+          - python3 cc-scripts/update_droplet_script.py
+          - ls
+          - source project.properties
+          - echo $DROPLET_ID
+          - echo $STACKHOST
+          - echo $PROJECT_NAME
+          - echo $ENVIRONMENT
+          - echo $ENV_URL
+          - cc-scripts/generate_config_js.sh > config.js
+          #          -Prep env
+          - ssh-keyscan -H $STACKHOST >> ~/.ssh/known_hosts
+          - chmod 600 cc-scripts/sshKey
+          - ssh -t root@$STACKHOST -i cc-scripts/sshKey -o "IdentitiesOnly=yes" <<'ENDSSH'
+          - rm -rf /app/prod/
+          - mkdir -p /app/prod/
+          - ufw disable
+          - ENDSSH
+          #          - Copy and run code in env
+          - scp -i cc-scripts/sshKey -o "IdentitiesOnly=yes" config.js root@$STACKHOST:/app/prod
+          - scp -i cc-scripts/sshKey -o "IdentitiesOnly=yes" project.tar.gz root@$STACKHOST:/app/
+          - scp -i cc-scripts/sshKey -o "IdentitiesOnly=yes" project.properties root@$STACKHOST:/app/
+          - ssh -t root@$STACKHOST -i cc-scripts/sshKey -o "IdentitiesOnly=yes"  <<'ENDSSH'
+          - docker kill $(docker ps -q)
+          - docker system prune -f
+          - source /app/project.properties
+          - tar -xvzf /app/project.tar.gz -C /app/prod/
+          - cd /app/prod/
+          - mv config.js build/
+          - docker image rm -f $PROJECT_NAME:1.0.0
+          - docker build --build-arg ENV_URL=$ENV_URL -t $PROJECT_NAME:1.0.0 .
+          - docker run -it -d  -v ${PWD}:/usr/src/app   -v /usr/src/app/node_modules   -p 5000:5000 --name $PROJECT_NAME-prod  --rm   $PROJECT_NAME:1.0.0
+          - ENDSSH
+    - step:
+        trigger: manual
+        name: Deploy to prod
+        deployment: prod
+        image: python:latest
+        # trigger: manual  # Uncomment to make this a manual deployment.
+        script:
+          - echo "Deploying to test environment"
+          #          - Create or delete prod env
+          - git clone git@bitbucket.org:cclustr/cc-scripts.git
+          - chmod 777 cc-scripts/update_droplet_script.py
+          - python3 cc-scripts/update_droplet_script.py
+          - ls
+          - source project.properties
+          - echo $DROPLET_ID
+          - echo $STACKHOST
+          - echo $PROJECT_NAME
+          - echo $ENVIRONMENT
+          - echo $ENV_URL
+          #          -Prep env
+          - ssh-keyscan -H $STACKHOST >> ~/.ssh/known_hosts
+          - chmod 600 cc-scripts/sshKey
+          - ssh -t root@$STACKHOST -i cc-scripts/sshKey -o "IdentitiesOnly=yes" <<'ENDSSH'
+          - rm -rf /app/prod/
+          - mkdir -p /app/prod/
+          - ufw disable
+          - ENDSSH
+          #          - Copy and run code in env
+          - scp -i cc-scripts/sshKey -o "IdentitiesOnly=yes" project.tar.gz root@$STACKHOST:/app/
+          - scp -i cc-scripts/sshKey -o "IdentitiesOnly=yes" project.properties root@$STACKHOST:/app/
+          - ssh -t root@$STACKHOST -i cc-scripts/sshKey -o "IdentitiesOnly=yes"  <<'ENDSSH'
+          - docker kill $(docker ps -q)
+          - docker system prune -f
+          - source /app/project.properties
+          - tar -xvzf /app/project.tar.gz -C /app/prod/
+          - cd /app/prod/
+          - docker image rm -f $PROJECT_NAME:1.0.0
+          - docker build --build-arg ENV_URL=$ENV_URL -t $PROJECT_NAME:1.0.0 .
+          - docker run -it -d  -v ${PWD}:/usr/src/app   -v /usr/src/app/node_modules   -p 5000:5000 --name $PROJECT_NAME-prod  --rm   $PROJECT_NAME:1.0.0
+          - ENDSSH

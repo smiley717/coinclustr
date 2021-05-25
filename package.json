@@ -1,0 +1,132 @@
+{
+  "name": "web-dashboard-react",
+  "version": "1.0.0",
+  "description": "dashboard project",
+  "private": true,
+  "homepage": "/dashboard",
+  "dependencies": {
+    "@babel/runtime": "^7.8.3",
+    "@craco/craco": "^5.6.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/antd": "^1.0.0",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@welldone-software/why-did-you-render": "^6.0.5",
+    "antd": "^4.14.0",
+    "antd-country-phone-input": "^3.0.2",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.19.1",
+    "axios-mock-adapter": "^1.17.0",
+    "craco-less": "^1.17.0",
+    "cross-env": "^7.0.3",
+    "enzyme-to-json": "^3.4.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "formik": "^2.1.4",
+    "glamor": "^2.20.40",
+    "google-libphonenumber": "^3.2.15",
+    "history": "^4.10.1",
+    "js-cookie": "^2.2.1",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.29.1",
+    "postcss": "^7.0.35",
+    "postcss-cli": "^8.0",
+    "prettier": "^2.0.5",
+    "query-string": "^6.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
+    "react-google-charts": "^3.0.15",
+    "react-google-recaptcha": "^2.0.1",
+    "react-otp-input": "^2.3.0",
+    "react-phone-input-2": "^2.13.9",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-syntax-highlighter": "^15.4.3",
+    "react-window": "^1.8.6",
+    "recoil": "^0.1.2",
+    "sockjs-client": "^1.5.1",
+    "sonar-scanner": "^3.1.0",
+    "stompjs": "^2.3.3",
+    "styled-components": "^5.0.1",
+    "tailwind": "2.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4",
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "react-scripts test --coverage --watchAll=false --silent -u",
+    "test:only": "react-scripts test",
+    "eject": "react-scripts eject",
+    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/react-router-dom": "^5.1.7",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-enzyme": "^7.1.2",
+    "jest-styled-components": "^7.0.2",
+    "react-test-renderer": "^16.13.0",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!coverage/**",
+      "!node_modules/**",
+      "!src/index.js",
+      "!src/setupTests.js",
+      "!public/**",
+      "!build/**",
+      "!src/axios_mock/App.js"
+    ],
+    "watchPathIgnorePatterns": [
+      "src/axios_mock/App.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "json",
+      "text",
+      "clover",
+      "cobertura"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/serviceWorker.js",
+      "<rootdir>/src/axios_mock/App.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://repo.bss-cclustr.com/scm/cc/web-dashboard-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
