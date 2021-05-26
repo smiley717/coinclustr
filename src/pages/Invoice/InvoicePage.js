@@ -40,6 +40,24 @@ const menuStyling = css({
   width: "240px",
 });
 
+const invoiceTitleStyling = css({
+  "@media only screen and (max-width: 576px)": {
+    minWidth: '100%',
+  },
+});
+const createInvoiceStyling = css({
+  "@media only screen and (max-width: 576px)": {
+    " .date-range": {
+      marginTop: '8px'
+    },
+    flexDirection: 'column-reverse',
+    " .create-invoice": {
+      display: 'flex',
+      minWidth: '100%',
+    }
+  },
+});
+
 const InvoicePage = () => {
   const history = useHistory();
   const [tableLoading, setTableLoading] = useState(true);
@@ -274,25 +292,29 @@ const InvoicePage = () => {
   return (
     <div className="container my-8 mx-auto">
       <Row gutter="16" className="mb-2">
-        <Col span={6}>
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} {...invoiceTitleStyling}>
           <H3>Invoices</H3>
         </Col>
-        <Col span={12} className="flex justify-center items-center">
-          <CustomRangePicker
-            onChange={handleChangeDateRange}
-            className="custom-range-picker pl-0"
-            bordered={false}
-            format="MMM DD, YYYY"
-          />
-        </Col>
-        <Col span={6}>
-          <div className="flex justify-end items-center">
-            <Link to="/invoices/create" className="flex items-center">
-              <BluePlusIcon />
-              <Label className="ml-2">Create invoice</Label>
-            </Link>
-            {/* <SearchOutlined className="ml-4" {...searchStyling} /> */}
-          </div>
+        <Col xs={24} sm={24} md={18} lg={18} xl={18}>
+          <Row {...createInvoiceStyling}>
+            <Col xs={24} sm={16} md={16} lg={16} xl={16} className="flex justify-center items-center date-range">
+              <CustomRangePicker
+                onChange={handleChangeDateRange}
+                className="custom-range-picker pl-0"
+                bordered={false}
+                format="MMM DD, YYYY"
+              />
+            </Col>
+            <Col span={8} className="create-invoice">
+              <div>
+                <Link to="/invoices/create" className="flex items-center justify-end">
+                  <BluePlusIcon />
+                  <Label className="ml-2">Create invoice</Label>
+                </Link>
+                {/* <SearchOutlined className="ml-4" {...searchStyling} /> */}
+              </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row className="mb-2 w-full">
