@@ -144,12 +144,12 @@ const CreateInvoicePage = () => {
         </Col>
       </Row>
       <Row gutter={16} className="mt-2">
-        <Col span={18}>
+        <Col span={24}>
           <H3>Create new invoice</H3>
         </Col>
       </Row>
       <Row gutter={16} className="mt-2">
-        <Col span={18}>
+        <Col span={24}>
           <CustomCard padding="24px">
             <div className="w-full mx-auto">
               <Form>
