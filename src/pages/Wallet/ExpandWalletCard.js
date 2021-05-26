@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { css } from "glamor";
 import { MoreOutlined } from "@ant-design/icons";
-import { Dropdown, Divider, Empty, message, Skeleton } from "antd";
+import {Dropdown, Divider, Empty, message, Skeleton, Row, Col} from "antd";
 import { Link } from "react-router-dom";
 import get from "lodash/get";
-
+import styled from "styled-components";
 import CustomCard from "styled/CustomCard";
 import { BodyText, BigText, H3, H4, Label } from "styled/Typography";
 
@@ -24,6 +24,20 @@ import { ReactComponent as BitcoinFlatIcon } from "img/icons/bitcoin-orange.svg"
 
 import { btcPrice } from "../../axios_mock/WalletServiceStub";
 import { TopUpModal } from "components/modal/TopUpModal";
+
+const BalanceIcon = styled.div`
+  float:left;
+  display:inline-block;
+  width: 64px;
+  height: 100%;
+`
+
+const BalanceContent = styled.div`
+  float:left;
+  display: inline-block;
+  width: calc(100% - 100px);
+  height: 100%;
+`
 
 const moreIconStyling = css({
   position: "absolute",
@@ -146,55 +160,61 @@ const ExpandWalletCard = ({ selectedWallet, view }) => {
         <MoreOutlined {...moreIconStyling} />
       </Dropdown>
       <div className="w-full">
-        <div className="w-full">
-          <Label className="mb-4 text-coinclustr-gray-40 block">
-            Current Balance
-          </Label>
-          <div className="w-full flex">
-            <div className="">
-              <BitcoinFlatIcon style={{ width: "64px", height: "64px" }} />
-            </div>
-            <div className="flex item-center justify-between w-full">
-              <div className="flex flex-col">
-                <BigText className="ml-4 text-capitalize text-coinclustr-gray-50">
-                  {stringToPascal(type)}
-                </BigText>
-                <div className="flex items-baseline">
-                  <Label className="ml-4 text-coinclustr-gray-40">BTC</Label>
-                  <H3 className="m-0 ml-2 text-coinclustr-gray-60">{`${confirmedBalance} BTC`}</H3>
+        <Label className="mb-4 text-coinclustr-gray-40 block">
+          Current Balance
+        </Label>
+        <>
+          <BalanceIcon>
+            <BitcoinFlatIcon style={{ width: "64px", height: "64px" }} />
+          </BalanceIcon>
+          <BalanceContent>
+            <Row className="w-full">
+              <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+                <div className="ml-4 flex flex-col">
+                  <BigText className="text-capitalize text-coinclustr-gray-50">
+                    {stringToPascal(type)}
+                  </BigText>
+                  <div className="flex items-baseline">
+                    <Label className="text-coinclustr-gray-40">BTC</Label>
+                    <H3 className="m-0 ml-2 text-coinclustr-gray-60">{`${confirmedBalance} BTC`}</H3>
+                  </div>
+                  <div className="flex items-baseline">
+                    <Label className="text-coinclustr-gray-40">USD</Label>
+                    <Label className="m-0 ml-2 text-coinclustr-gray-40">{`$${numberWithCommas(
+                      confirmedBalance * marketPrice
+                    )}`}</Label>
+                  </div>
                 </div>
-                <div className="flex items-baseline">
-                  <Label className="ml-4 text-coinclustr-gray-40">USD</Label>
-                  <Label className="m-0 ml-2 text-coinclustr-gray-40">{`$${numberWithCommas(
-                    confirmedBalance * marketPrice
-                  )}`}</Label>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                <div className="ml-4 flex flex-col">
+                  <Label className="text-coinclustr-gray-40 leading-8">
+                    Market Price
+                  </Label>
+                  <H3 className="m-0 text-coinclustr-gray-60">{`$${numberWithCommas(
+                    marketPrice
+                  )}`}</H3>
                 </div>
-              </div>
-              <div className="flex flex-col">
-                <Label className="text-coinclustr-gray-40 leading-8">
-                  Market Price
-                </Label>
-                <H3 className="m-0 text-coinclustr-gray-60">{`$${numberWithCommas(
-                  marketPrice
-                )}`}</H3>
-              </div>
-              <div className="flex flex-col">
-                <Label className="text-coinclustr-gray-40 leading-8">
-                  Day Change
-                </Label>
-                {Math.sign(dayChange) === -1 || Math.sign(dayChange) === -0 ? (
-                  <H3 className="m-0 text-coinclustr-red">{`↓ ${roundNumber(
-                    dayChange
-                  )}%`}</H3>
-                ) : (
-                  <H3 className="m-0 text-coinclustr-green">{`↑ ${roundNumber(
-                    dayChange
-                  )}%`}</H3>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
+                <div className="ml-4 flex flex-col">
+                  <Label className="text-coinclustr-gray-40 leading-8">
+                    Day Change
+                  </Label>
+                  {Math.sign(dayChange) === -1 || Math.sign(dayChange) === -0 ? (
+                    <H3 className="m-0 text-coinclustr-red">{`↓ ${roundNumber(
+                      dayChange
+                    )}%`}</H3>
+                  ) : (
+                    <H3 className="m-0 text-coinclustr-green">{`↑ ${roundNumber(
+                      dayChange
+                    )}%`}</H3>
+                  )}
+                </div>
+              </Col>
+            </Row>
+          </BalanceContent>
+        </>
       </div>
       {topupModalVisible && (
         <TopUpModal

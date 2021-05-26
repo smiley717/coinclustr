@@ -1,4 +1,4 @@
-export const BASE_URL = window._env_.REACT_APP_API_URL;
+export const BASE_URL = process.env.REACT_APP_API_URL;
 
 export const INVOICE_PREFIX = "/invoicing";
 export const USER_PREFIX = "/user";
