@@ -8,6 +8,11 @@ const CustomTableStyled = styled(Table)`
   table {
     border-collapse: separate;
     border-spacing: 0;
+    @media only screen and (max-width: 768px) {
+      overflow-x: auto;
+      white-space: nowrap;
+      display: block;
+    },
     .ant-table-thead {
       font-family: Poppins;
       font-size: 14px;

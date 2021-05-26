@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Row, Col } from "antd";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import { css } from "glamor";
 import { H3, Label } from "styled/Typography";
 import CustomTable from "components/custom/CustomTable";
 import SearchDropdownFilter from "components/SearchDropdownFilter";
@@ -97,6 +98,24 @@ const columns = [
   },
 ];
 
+const paymentTitleStyling = css({
+  "@media (max-width: 576px)": {
+    minWidth: '100%',
+  },
+});
+const paymentCreateStyling = css({
+  "@media (max-width: 576px)": {
+    " .date-range": {
+      marginTop: '8px'
+    },
+    flexDirection: 'column-reverse',
+    " .create-payment": {
+      display: 'flex',
+      minWidth: '100%',
+    }
+  },
+});
+
 const PaymentPage = () => {
   const {
     fetchPage,
@@ -154,27 +173,33 @@ const PaymentPage = () => {
   return (
     <div className="container my-8 mx-auto">
       <Row gutter="16" className="mb-2">
-        <Col span={6}>
+        <Col xs={24} sm={24} md={6} lg={6} xl={6} {...paymentTitleStyling}>
           <H3>Payments</H3>
         </Col>
-        <Col span={12} className="flex justify-center items-center">
-          <CustomRangePicker
-            onChange={handleChangeDateRange}
-            className="custom-range-picker pl-0"
-            bordered={false}
-            format="MMM DD, YYYY"
-          />
-        </Col>
-        <Col span={6} className="flex justify-end items-center">
-          <Link
-            to="/payments/create?screen=coinclustr-account"
-            className="flex items-center"
-          >
-            <div className="flex items-center cursor-pointer">
-              <BluePlusIcon />
-              <Label className="ml-2">Create new payment </Label>
-            </div>
-          </Link>
+        <Col xs={24} sm={24} md={18} lg={18} xl={18}>
+          <Row {...paymentCreateStyling}>
+            <Col xs={24} sm={16} md={16} lg={16} xl={16} className="flex justify-center items-center date-range">
+              <CustomRangePicker
+                onChange={handleChangeDateRange}
+                className="custom-range-picker pl-0"
+                bordered={false}
+                format="MMM DD, YYYY"
+              />
+            </Col>
+            <Col span={8} className="create-payment">
+              <div>
+                <Link
+                  to="/payments/create?screen=coinclustr-account"
+                  className="flex items-center justify-end"
+                >
+                  <div className="flex items-center cursor-pointer">
+                    <BluePlusIcon />
+                    <Label className="ml-2">Create new payment</Label>
+                  </div>
+                </Link>
+              </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row className="mb-2 w-full">

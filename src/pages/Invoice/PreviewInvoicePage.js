@@ -168,7 +168,7 @@ const PreviewInvoicePage = () => {
         </Col>
       </Row>
       <Row gutter={24} className="mt-2">
-        <Col span={18}>
+        <Col span={24}>
           <CustomCard padding="24px" display="block">
             <Dropdown overlay={menu} trigger={["click"]}>
               <MoreOutlined {...moreIconStyling} />
@@ -185,7 +185,7 @@ const PreviewInvoicePage = () => {
               <Col span={8} className="flex items-center justify-end">
                 <LabelLarge>Send To Address</LabelLarge>
               </Col>
-              <Col span={16} className="flex justify-start items-center">
+              <Col span={16} className="flex justify-start items-center flex-wrap">
                 <BodyText>{sendToAddress}</BodyText>
               </Col>
             </Row>

@@ -25,20 +25,6 @@ import { ReactComponent as BitcoinFlatIcon } from "img/icons/bitcoin-orange.svg"
 import { btcPrice } from "../../axios_mock/WalletServiceStub";
 import { TopUpModal } from "components/modal/TopUpModal";
 
-const BalanceIcon = styled.div`
-  float:left;
-  display:inline-block;
-  width: 64px;
-  height: 100%;
-`
-
-const BalanceContent = styled.div`
-  float:left;
-  display: inline-block;
-  width: calc(100% - 100px);
-  height: 100%;
-`
-
 const moreIconStyling = css({
   position: "absolute",
   fontSize: "24px",
@@ -164,56 +150,54 @@ const ExpandWalletCard = ({ selectedWallet, view }) => {
           Current Balance
         </Label>
         <>
-          <BalanceIcon>
+          <div className="flex items-center">
             <BitcoinFlatIcon style={{ width: "64px", height: "64px" }} />
-          </BalanceIcon>
-          <BalanceContent>
-            <Row className="w-full">
-              <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-                <div className="ml-4 flex flex-col">
-                  <BigText className="text-capitalize text-coinclustr-gray-50">
-                    {stringToPascal(type)}
-                  </BigText>
-                  <div className="flex items-baseline">
-                    <Label className="text-coinclustr-gray-40">BTC</Label>
-                    <H3 className="m-0 ml-2 text-coinclustr-gray-60">{`${confirmedBalance} BTC`}</H3>
-                  </div>
-                  <div className="flex items-baseline">
-                    <Label className="text-coinclustr-gray-40">USD</Label>
-                    <Label className="m-0 ml-2 text-coinclustr-gray-40">{`$${numberWithCommas(
-                      confirmedBalance * marketPrice
-                    )}`}</Label>
-                  </div>
+            <BigText className="text-capitalize text-coinclustr-gray-50 ml-4">
+              {stringToPascal(type)}
+            </BigText>
+          </div>
+          <Row className="w-full flex items-center">
+            <Col xs={24} sm={24} md={24} lg={12} xl={12} className="mt-4">
+              <div className="ml-4 flex flex-col">
+                <div className="flex items-baseline">
+                  <Label className="text-coinclustr-gray-40">BTC</Label>
+                  <H3 className="m-0 ml-2 text-coinclustr-gray-60">{`${confirmedBalance} BTC`}</H3>
                 </div>
-              </Col>
-              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                <div className="ml-4 flex flex-col">
-                  <Label className="text-coinclustr-gray-40 leading-8">
-                    Market Price
-                  </Label>
-                  <H3 className="m-0 text-coinclustr-gray-60">{`$${numberWithCommas(
-                    marketPrice
-                  )}`}</H3>
+                <div className="flex items-baseline">
+                  <Label className="text-coinclustr-gray-40">USD</Label>
+                  <Label className="m-0 ml-2 text-coinclustr-gray-40">{`$${numberWithCommas(
+                    confirmedBalance * marketPrice
+                  )}`}</Label>
                 </div>
-              </Col>
-              <Col xs={24} sm={24} md={12} lg={6} xl={6}>
-                <div className="ml-4 flex flex-col">
-                  <Label className="text-coinclustr-gray-40 leading-8">
-                    Day Change
-                  </Label>
-                  {Math.sign(dayChange) === -1 || Math.sign(dayChange) === -0 ? (
-                    <H3 className="m-0 text-coinclustr-red">{`↓ ${roundNumber(
-                      dayChange
-                    )}%`}</H3>
-                  ) : (
-                    <H3 className="m-0 text-coinclustr-green">{`↑ ${roundNumber(
-                      dayChange
-                    )}%`}</H3>
-                  )}
-                </div>
-              </Col>
-            </Row>
-          </BalanceContent>
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={6} xl={6} className="mt-4">
+              <div className="ml-4 flex flex-col">
+                <Label className="text-coinclustr-gray-40 leading-8">
+                  Market Price
+                </Label>
+                <H3 className="m-0 text-coinclustr-gray-60">{`$${numberWithCommas(
+                  marketPrice
+                )}`}</H3>
+              </div>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={6} xl={6} className="mt-4">
+              <div className="ml-4 flex flex-col">
+                <Label className="text-coinclustr-gray-40 leading-8">
+                  Day Change
+                </Label>
+                {Math.sign(dayChange) === -1 || Math.sign(dayChange) === -0 ? (
+                  <H3 className="m-0 text-coinclustr-red">{`↓ ${roundNumber(
+                    dayChange
+                  )}%`}</H3>
+                ) : (
+                  <H3 className="m-0 text-coinclustr-green">{`↑ ${roundNumber(
+                    dayChange
+                  )}%`}</H3>
+                )}
+              </div>
+            </Col>
+          </Row>
         </>
       </div>
       {topupModalVisible && (

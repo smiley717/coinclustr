@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, message } from "antd";
 import { useHistory } from "react-router-dom";
 import { Button } from "antd";
-import { CustomCardExtended } from "styled/CustomCard";
+import { CustomPaymentCard } from "styled/CustomCard";
 import { LabelLarge, BodyText, Label, H3 } from "styled/Typography";
 import CustomButton from "styled/CustomButton";
 import { OTPPaymentModal } from "components/modal/OTPPaymentModal";
@@ -101,7 +101,7 @@ const ConfirmPayment = ({ setStep, formData, setFormData, enableEdit = false, on
         callback={callback}
       />
       <Col span={24}>
-        <CustomCardExtended padding="24px" display="block" style={(successVisible ? { ...SuccessBorderStyle } : {})}>
+        <CustomPaymentCard padding="24px" display="block" style={(successVisible ? { ...SuccessBorderStyle } : {})}>
           {loaderVisible && (
             <div style={ProgressStyle} >
               <Progress className="animate-spin" style={{ margin: '0 auto' }} />
@@ -203,7 +203,7 @@ const ConfirmPayment = ({ setStep, formData, setFormData, enableEdit = false, on
               </Row>
             </>
           )}
-        </CustomCardExtended>
+        </CustomPaymentCard>
       </Col>
     </Row>
   );

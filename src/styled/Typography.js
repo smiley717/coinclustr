@@ -47,6 +47,7 @@ export const BodyText = styled.span`
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
+  word-break: break-all;
   color: ${(props) => props.theme.colors.alertDefaultDescriptionColor};
 `;
 export const BodyText500 = styled(BodyText)`
