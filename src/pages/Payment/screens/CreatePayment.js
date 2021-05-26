@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, message } from "antd";
 import get from "lodash/get";
-import { CustomCardExtended } from "../../../styled/CustomCard";
 import CustomButton from "../../../styled/CustomButton";
 import { isEmpty } from "utils/common-utils";
 import { BodyText500 } from "styled/Typography";
@@ -14,6 +13,7 @@ import { PreValidatePayment } from "services/PaymentServices";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { preValidatedId } from "recoil/payments";
 import { errorStatus } from "utils/error-status";
+import { CustomPaymentCard } from "../../../styled/CustomCard";
 
 const layout = {
   labelCol: { span: 24 },
@@ -117,7 +117,7 @@ const CreatePayment = ({ setStep, formData, setFormData, onInternalServerError }
     setShowVerifiedAmount(true);
   };
   return (
-    <CustomCardExtended padding="24px">
+    <CustomPaymentCard padding="16px">
       <Form
         {...layout}
         name="basic"
@@ -166,7 +166,7 @@ const CreatePayment = ({ setStep, formData, setFormData, onInternalServerError }
             </CustomButton>
         </Form.Item>
       </Form>
-    </CustomCardExtended>
+    </CustomPaymentCard>
   );
 };
 export default CreatePayment;

@@ -58,3 +58,18 @@ export const CustomCardExtended = styled(CustomCard)`
     }
   }
 `;
+
+
+export const CustomPaymentCard = styled(CustomCard)`
+  @media (max-width: 576px) {
+    width: calc(100vw - 24px);
+  }
+  width: 504px;
+  border-radius: 10px;
+  .submit-button-wrapper {
+    .ant-form-item-control-input-content {
+      justify-content: center;
+      display: flex;
+    }
+  }
+`;
