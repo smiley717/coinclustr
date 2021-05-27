@@ -10,6 +10,7 @@ import * as axios from "axios";
 import LayoutFrame from "./Layout";
 import Loader from "../components/Loader";
 import theme from "../utils/theme";
+import GlobalStyle from "./createGlobalStyle";
 
 import { CustomerAuthorizationServiceStub } from "../axios_mock/CustomerAuthorizationServiceStub";
 import { InvoiceServiceStub } from "../axios_mock/InvoiceServiceStub";
@@ -98,6 +99,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <RecoilRoot>
         <Router basename={"/dashboard"}>
           <LayoutFrame>
