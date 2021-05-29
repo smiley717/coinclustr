@@ -4,10 +4,8 @@ import { BASE_URL, REQUEST_TIMEOUT } from "../utils/Constant";
 import Cookies from "js-cookie";
 
 export const publicRequest = (url, info) => {
-  console.log(process.env.NODE_ENV)
-  console.log("BASE_URL: "+BASE_URL)
   const publicRequestInstance = axios.create({
-    baseURL: `${BASE_URL}`,
+    baseURL: getBaseUrl(),
     withCredentials: false,
     url: `${url}`,
   });
@@ -18,10 +16,8 @@ export const publicRequest = (url, info) => {
 };
 
 export const request = (url, info, token) => {
-  console.log(process.env.NODE_ENV)
-  console.log("BASE_URL: "+BASE_URL)
   const api_request = axios.create({
-    baseURL: `${BASE_URL}`,
+    baseURL: getBaseUrl(),
     withCredentials: false,
     url: `${url}`,
     headers: {
@@ -42,3 +38,10 @@ export const requestWithToken = (url, info) => {
 export const requestWith2faToken = (url, info, token) => {
   return request(url, info, token);
 };
+
+export const getBaseUrl = () => {
+  if (process.env.NODE_ENV == "development"){
+    return "https://api.bss-cclustr.com/"
+  }
+  return "/api";
+}

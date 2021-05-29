@@ -50,7 +50,7 @@ const MobileNavigation = (props) => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() => {
-                goToPage("wallet");
+                goToPage("wallets");
                 closeMobileNavigation();
               }}
               minheight={minHeightNavigation}
@@ -61,7 +61,7 @@ const MobileNavigation = (props) => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() => {
-                goToPage("invoice");
+                goToPage("invoices");
                 closeMobileNavigation();
               }}
               minheight={minHeightNavigation}
@@ -72,7 +72,7 @@ const MobileNavigation = (props) => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() => {
-                goToPage("payment");
+                goToPage("payments");
                 closeMobileNavigation();
               }}
               minheight={minHeightNavigation}
@@ -82,7 +82,7 @@ const MobileNavigation = (props) => {
               Payments
             </CustomMenuItem>
             <CustomMenuItem
-              onClick={() => redirect("api")}
+              onClick={() => redirect("apis")}
               minheight={minHeightNavigation}
               key="api"
               className="flex justify-start"
@@ -91,7 +91,7 @@ const MobileNavigation = (props) => {
             </CustomMenuItem>
             <CustomMenuItem
               onClick={() => {
-                goToPage("notification");
+                goToPage("notifications");
                 closeMobileNavigation();
               }}
               minheight={minHeightNavigation}

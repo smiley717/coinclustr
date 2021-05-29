@@ -25,6 +25,7 @@ import { ReactComponent as FAQIcon } from "../img/icons/faq-icon.svg";
 import { ReactComponent as ContactUsFormIcon } from "../img/icons/contact-us-form-icon.svg";
 import { LogoWrapper } from "styled/LogoWrapper";
 import { notificationState } from "recoil/user";
+import { REDIRECT_URL } from "utils/Constant";
 
 const TopNavigation = (props) => {
   const [, setMaskVisible] = useRecoilState(maskVisibleState);
@@ -167,7 +168,7 @@ const TopNavigation = (props) => {
       .catch((err) => {
         console.log(err);
       });
-    window.location.href = "/";
+      window.location.replace(REDIRECT_URL);
   };
 
   useEffect(() => {

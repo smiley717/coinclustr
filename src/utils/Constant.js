@@ -1,5 +1,5 @@
-export const BASE_URL = process.env.REACT_APP_API_URL;
-
+export const BASE_URL = window._env_?.REACT_APP_ENV_URL | "https://api.bss-cclustr.com";
+export const REDIRECT_URL = window._env_?.REACT_APP_LOGOUT_REDIRECT_URL | "/auth/signin";
 export const INVOICE_PREFIX = "/invoicing";
 export const USER_PREFIX = "/user";
 export const STATISTIC_PREFIX = "/wallet/statistics";

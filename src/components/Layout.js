@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import { useRecoilState } from "recoil";
 import { withRouter } from "react-router-dom";
 import Cookies from "js-cookie";
+import { REDIRECT_URL } from "utils/Constant";
 
 import TopNavigation from "./TopNavigation";
 import { maskVisibleState } from "recoil/mask";
@@ -38,7 +39,8 @@ const LayoutFrame = ({ children, location }) => {
     // if the token is empty, reject the access
     if (isEmpty(token) || 
     Date.now() >= decode(token).exp * 1000) {
-      // window.location.href = "/auth/signin";
+      console.log(REDIRECT_URL);
+      // window.location.replace(REDIRECT_URL);
     } 
     if (
       isEmpty(profileState) ||

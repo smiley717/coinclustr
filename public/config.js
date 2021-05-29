@@ -1,1 +1,2 @@
 window.REACT_APP_ENV_URL=undefined;
+window.REACT_APP_LOGOUT_REDIRECT_URL=undefined;

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "dashboard project",
   "private": true,
-  "homepage": "/dashboard",
+  "homepage": "/",
   "dependencies": {
     "@babel/runtime": "^7.8.3",
     "@craco/craco": "^5.6.4",

@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 import { GA_TRACKING_ID } from "./Constant";
 
 class GoogleAnalytics extends Component {
-    basePath = '/dashboard';
+    basePath = '/';
 
     componentDidMount () {
         this.logPageChange(
