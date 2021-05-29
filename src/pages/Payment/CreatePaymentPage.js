@@ -38,7 +38,7 @@ const CreatePaymentPage = () => {
         setVisible={setCreatePaymentSuccessModalVisible}
       />
       <div className="flex">
-        <GoBackButton url="/payments" text="Back to previous page" />
+        <GoBackButton url="/payments" text="Back to the previous page" />
       </div>
       <CreatePaymentTabs />
     </div>

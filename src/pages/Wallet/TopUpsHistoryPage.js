@@ -114,7 +114,7 @@ const TopUpsHistoryPage = () => {
   return (
     <div className="container my-8 mx-auto">
       <Row gutter="16" className="mb-4">
-        <GoBackButton url="/wallets" text="Back to previous page" />
+        <GoBackButton url="/wallets" text="Back to the previous page" />
       </Row>
       <Row gutter="16" className="mb-2">
           <H3 className="mb-0">Topup history {type}</H3>
