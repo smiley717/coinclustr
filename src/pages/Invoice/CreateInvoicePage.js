@@ -8,8 +8,8 @@ import {
 } from "@ant-design/icons";
 import get from "lodash/get";
 
-import CustomCard from "styled/CustomCard";
-import { LabelLarge, H3, Label } from "styled/Typography";
+import { CustomPaymentCard } from "styled/CustomCard";
+import { LabelLarge, H3, BodyText500 } from "styled/Typography";
 import CustomButton from "styled/CustomButton";
 import CustomInput from "styled/CustomInput";
 import CreateNewInvoiceModal from "components/modal/CreateNewInvoiceModal";
@@ -145,118 +145,100 @@ const CreateInvoicePage = () => {
       </Row>
       <Row gutter={16} className="mt-2">
         <Col span={24}>
-          <H3>Create new invoice</H3>
+          <H3 className="w-full text-center">Create new invoice</H3>
         </Col>
       </Row>
-      <Row gutter={16} className="mt-2">
-        <Col span={24}>
-          <CustomCard padding="24px">
-            <div className="w-full mx-auto">
-              <Form>
-                <div className="flex mb-4 w-full">
-                  <div className="w-3/12 pt-3">
-                    <Label className="text-coinclustr-gray-50">Wallet</Label>
-                  </div>
-                  <div className="w-8/12">
-                    <Form.Item
-                      help={
-                        <span className="flex items-center mt-1">
-                          <InfoCircleOutlined />
-                          <span className="text-coinclustr-gray-20 text-sm font-normal ml-1">
-                            Please select wallet to receive funds
-                          </span>
-                        </span>
-                      }
-                    >
-                      <BuiltInWalletSelect
-                        className="w-full"
-                        onChange={handleChangeWallet}
-                        status={false}
-                      />
-                    </Form.Item>
-                  </div>
-                </div>
-                <div className="flex mb-4 w-full">
-                  <div className="w-3/12 pt-3">
-                    <Label className="text-coinclustr-gray-50">Amount</Label>
-                  </div>
-                  <div className="w-8/12">
-                    <Form.Item
-                      help={generateAmountMessage(amount)}
-                      validateStatus={generateAmountInputStatus(amount)}
-                    >
-                      <CustomInput
-                        value={amount}
-                        onChange={handleChangeAmount}
-                        placeholder="0.00 BTC"
-                        help="The information is being validated..."
-                      />
-                    </Form.Item>
-                  </div>
-                </div>
-                <div className="flex mb-4 w-full">
-                  <div className="w-3/12 pt-3">
-                    <Label className="text-coinclustr-gray-50">Email</Label>
-                  </div>
-                  <div className="w-8/12">
-                    <Form.Item
-                      help={
-                        !isEmail(email) && !isEmpty(email) ? (
-                          <span className="flex items-center mt-1">
-                            <ErrorIcon />
-                            <span className="text-red-500 text-sm font-normal ml-1">
-                              Email is not valid
-                            </span>
-                          </span>
-                        ) : (
-                          <span className="flex items-center mt-1">
-                            <InfoCircleOutlined className="text-coinclustr-gray-20" />
-                            <span className="text-coinclustr-gray-20 text-sm font-normal ml-1">
-                              Sends receipt of invoice to email provided
-                              (optional)
-                            </span>
-                          </span>
-                        )
-                      }
-                      validateStatus={
-                        !isEmail(email) && !isEmpty(email) ? "error" : ""
-                      }
-                    >
-                      <CustomInput
-                        value={email}
-                        placeholder="Your email"
-                        onChange={handleChangeEmail}
-                      />
-                    </Form.Item>
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <div className="w-3/12"></div>
-                  <div className="w-8/12 flex items-center">
-                    <CustomButton
-                      onClick={handleCreateInvoice}
-                      disabled={
-                        (!isEmpty(email) && !isEmail(email)) ||
-                        isEmpty(selectedWallet) ||
-                        !isValidAmount(amount)
-                      }
-                    >
-                      {!isCreating ? (
-                        "Create Invoice"
-                      ) : (
-                        <Spin indicator={antIcon} />
-                      )}
-                    </CustomButton>
-                    {isCreating && (
-                      <span className="text-coinclustr-gray-20 text-sm font-normal ml-4">
-                        Creating your invoice...
+      <Row gutter={16} className="mt-12">
+        <Col span={24} className="flex w-full justify-center">
+          <CustomPaymentCard padding="16px">
+            <Form
+              name="basic"
+              className="w-full form-center"
+              layout="vertical"
+            >
+              <Form.Item
+                label={<BodyText500>Wallet</BodyText500>}
+                help={
+                  <span className="flex items-center mt-1">
+                    <InfoCircleOutlined />
+                    <span className="text-coinclustr-gray-20 text-sm font-normal ml-1">
+                      Please select wallet to receive funds
+                    </span>
+                  </span>
+                }
+              >
+                <BuiltInWalletSelect
+                  className="w-full"
+                  onChange={handleChangeWallet}
+                  status={false}
+                />
+              </Form.Item>
+              <Form.Item
+                label={<BodyText500>Amount</BodyText500>}
+                className="mt-4 mb-0"
+                help={generateAmountMessage(amount)}
+                validateStatus={generateAmountInputStatus(amount)}
+              >
+                <CustomInput
+                  value={amount}
+                  onChange={handleChangeAmount}
+                  placeholder="0.00 BTC"
+                  help="The information is being validated..."
+                />
+              </Form.Item>
+              <Form.Item
+                label={<BodyText500>Email</BodyText500>}
+                help={
+                  !isEmail(email) && !isEmpty(email) ? (
+                    <span className="flex items-center mt-1">
+                      <ErrorIcon />
+                      <span className="text-red-500 text-sm font-normal ml-1">
+                        Email is not valid
                       </span>
-                    )}
-                  </div>
-                </div>
-              </Form>
-            </div>
-          </CustomCard>
+                    </span>
+                  ) : (
+                    <span className="flex items-center mt-1">
+                      <InfoCircleOutlined className="text-coinclustr-gray-20" />
+                      <span className="text-coinclustr-gray-20 text-sm font-normal ml-1">
+                        Sends receipt of invoice to email provided
+                        (optional)
+                      </span>
+                    </span>
+                  )
+                }
+                validateStatus={
+                  !isEmail(email) && !isEmpty(email) ? "error" : ""
+                }
+              >
+                <CustomInput
+                  value={email}
+                  placeholder="Your email"
+                  onChange={handleChangeEmail}
+                />
+              </Form.Item>
+              <Form.Item className="submit-button-wrapper mt-12">
+                <CustomButton
+                  onClick={handleCreateInvoice}
+                  disabled={
+                    (!isEmpty(email) && !isEmail(email)) ||
+                    isEmpty(selectedWallet) ||
+                    !isValidAmount(amount)
+                  }
+                >
+                  {!isCreating ? (
+                    "Create Invoice"
+                  ) : (
+                    <Spin indicator={antIcon} />
+                  )}
+                </CustomButton>
+                {isCreating && (
+                  <span className="text-coinclustr-gray-20 text-sm font-normal ml-4">
+                    Creating your invoice...
+                  </span>
+                )}
+              </Form.Item>
+            </Form>
+          </CustomPaymentCard>
         </Col>
       </Row>
     </div>
