@@ -21,7 +21,7 @@ export const OTPPaymentModal = ({ visible, setVisible, formData, callback }) => 
   const [step, setStep] = useState(1);
   const history = useHistory();
 
-  const { mfaSettings: {phoneNumber}} = settingsState; 
+  const phoneNumber = settingsState?.mfaSettings?.phoneNumber; 
 
   const submitOTPCode = () => {
     // check the OTP code here

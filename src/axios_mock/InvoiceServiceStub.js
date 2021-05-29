@@ -8,7 +8,7 @@ const invoicStats = InvoiceStats;
 
 export const InvoiceServiceStub = (mock) => {
   // get all invoice
-  mock.onGet("/wallet/v2/getAllInvoices").reply((config) => {
+  mock.onGet(/^\/wallet\/v2\/getAllInvoices\?*/).reply((config) => {
     return [200, invoiceList];
   });
 

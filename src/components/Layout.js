@@ -38,7 +38,7 @@ const LayoutFrame = ({ children, location }) => {
     // if the token is empty, reject the access
     if (isEmpty(token) || 
     Date.now() >= decode(token).exp * 1000) {
-      window.location.href = "/auth/signin";
+      // window.location.href = "/auth/signin";
     } 
     if (
       isEmpty(profileState) ||
