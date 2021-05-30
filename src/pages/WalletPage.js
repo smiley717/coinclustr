@@ -126,10 +126,13 @@ const WalletPage = () => {
 
   const onSelectWallet = (walletId) => {
     setCurrentSelectedWalletData(walletId);
+  };
+
+  const drawerOpen = () => {
     if (window.innerWidth <= 768) {
       setIsDrawerOpen(true);
     }
-  };
+  }
 
   if (isWalletFetching) {
     return (
@@ -176,6 +179,7 @@ const WalletPage = () => {
                 builtInWalletData={builtInWalletData}
                 currentSelectedWalletData={currentSelectedWalletData}
                 onSelectWallet={onSelectWallet}
+                drawerOpen={drawerOpen}
               />
             </Col>
             <Col xs={0} sm={0} md={18} lg={18} xl={18}>
@@ -183,7 +187,7 @@ const WalletPage = () => {
             </Col>
             <Drawer
               placement="bottom"
-              closable={false}
+              closable={true}
               visible={isDrawerOpen}
               destroyOnClose={true}
               onClose={() => setIsDrawerOpen(false)}

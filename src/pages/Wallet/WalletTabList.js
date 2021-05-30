@@ -12,6 +12,7 @@ const WalletTabList = ({
   builtInWalletData,
   currentSelectedWalletData,
   onSelectWallet,
+  drawerOpen,
 }) => {
   useEffect(() => {
     if (!isEmpty(builtInWalletData)) {
@@ -32,7 +33,7 @@ const WalletTabList = ({
                     isActive={currentSelectedWalletData === walletId}
                     data={item}
                     key={index}
-                    handleClick={() => onSelectWallet(walletId)}
+                    handleClick={() => {onSelectWallet(walletId); drawerOpen();}}
                   />
                 );
               })}
@@ -47,7 +48,7 @@ const WalletTabList = ({
                     data={item}
                     key={index}
                     isBuiltIn={true}
-                    handleClick={() => onSelectWallet(walletId)}
+                    handleClick={() => {onSelectWallet(walletId); drawerOpen();}}
                   />
                 );
               })}
@@ -64,7 +65,7 @@ const WalletTabList = ({
                     isActive={currentSelectedWalletData === walletId}
                     data={item}
                     key={index}
-                    handleClick={() => onSelectWallet(walletId)}
+                    handleClick={() => {onSelectWallet(walletId); drawerOpen();}}
                   />
                 );
               })
@@ -82,7 +83,7 @@ const WalletTabList = ({
                     data={item}
                     key={index}
                     isBuiltIn={true}
-                    handleClick={() => onSelectWallet(walletId)}
+                    handleClick={() => {onSelectWallet(walletId); drawerOpen();}}
                   />
                 );
               })
