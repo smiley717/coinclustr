@@ -8,7 +8,7 @@ const CustomTableStyled = styled(Table)`
   table {
     border-collapse: separate;
     border-spacing: 0;
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
       overflow-x: auto;
       white-space: nowrap;
       display: block;

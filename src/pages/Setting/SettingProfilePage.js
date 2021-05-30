@@ -21,6 +21,17 @@ import {
 import { userDataState, profileDataState } from "recoil/user";
 
 import { GetUserProfile, DeactiveUserProfile } from "services/CustomerService";
+import {css} from "glamor";
+
+const settingPlanStyling = css({
+  "@media (max-width: 768px)": {
+    flexDirection: 'column-reverse',
+    " .subscription-section": {
+      display: 'flex',
+      minWidth: '100%',
+    }
+  },
+});
 
 const SettingProfilePage = () => {
   const [selectedPlan, setSelectedPlan] = useState("");
@@ -105,9 +116,10 @@ const SettingProfilePage = () => {
           <H3>Plan</H3>
         </div>
         <div className="w-full flex">
-          <div className="flex justify-between items-start w-full">
+          <div className="flex justify-between items-start w-full" {...settingPlanStyling}>
             <PlanDetailSection />
             <SubscriptionSection
+              className="subscription-section"
               selectedPlan={selectedPlan}
               onChangePlan={onChangePlan}
               setAddNewPaymentMethodVisible={setAddNewPaymentMethodVisible}

@@ -88,7 +88,7 @@ const SettingBillingPage = () => {
         <H3>Previous Billing</H3>
         <span className="text-right flex justify-end items-center cursor-pointer">
           <Label>Export CSV</Label>
-          <ExportIcon className="ml-2 mr-8" />
+          <ExportIcon className="ml-2 mr-2" />
         </span>
       </div>
       <div className="mt-2 w-full">

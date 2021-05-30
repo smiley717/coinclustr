@@ -123,7 +123,7 @@ const SettingSecurityPage = () => {
               </div>
             </div>
             <div className="w-6/12">
-              <div className="block md:flex items-center justify-end">
+              <div className="block flex items-center justify-end">
                 <CustomButton
                   size="small"
                   type="default"
@@ -146,7 +146,7 @@ const SettingSecurityPage = () => {
               </div>
             </div>
             <div className="w-6/12">
-              <div className="block md:flex items-center justify-end">
+              <div className="block flex items-center justify-end">
                 <CustomButton
                   size="small"
                   type="default"
