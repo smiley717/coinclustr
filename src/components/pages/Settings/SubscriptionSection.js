@@ -24,6 +24,9 @@ import { ReactComponent as BuiltInIcon } from "img/icons/built-in.svg";
 import { ReactComponent as BitcoinYellowIcon } from "img/icons/bitcoin-yellow.svg";
 
 const SubscriptionContainerStyles = css({
+  "@media (max-width: 768px)": {
+    width: "100%",
+  },
   width: "576px",
 });
 

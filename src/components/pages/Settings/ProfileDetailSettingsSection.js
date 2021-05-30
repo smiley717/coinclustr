@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "antd";
+import { Col, Divider, Row } from "antd";
 import get from "lodash/get";
 
 import CustomCard from "styled/CustomCard";
@@ -40,22 +40,23 @@ const ProfileDetailSettingsSection = ({
                 </CustomButton>
               </div>
               <Divider className="my-4" />
-              <div className="w-full flex items-center justify-between">
-                <div className="flex items-start sm:items-center flex-col justify-start sm:flex-row mb-4 sm:mb-0">
+              <Row className="w-full">
+                <Col xs={24} sm={20} md={20} lg={20} xl={20} className="flex items-start sm:items-center flex-col justify-start sm:flex-row mb-4 sm:mb-0">
                   <LabelLarge className="mr-8 block sm:block md:flex">
                     Email address
                   </LabelLarge>
                   <BodyText className="block sm:flex">
                     {get(profileState, "email", "")}
                   </BodyText>
-                </div>
-                <div className="flex items-center justify-end">
+                </Col>
+
+                <Col xs={24} sm={4} md={4} lg={4} xl={4} className="flex items-center justify-end mb-4 sm:mb-0">
                   <CheckedIcon className="mr-2" />
                   <BodyText className="text-coinclustr-green">
                     Verified
                   </BodyText>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </div>
           </CustomCard>
         </div>

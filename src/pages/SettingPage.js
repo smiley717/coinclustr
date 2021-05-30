@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu } from "antd";
+import {Col, Menu, Row} from "antd";
 import { Link, Switch, Route, useRouteMatch } from "react-router-dom";
 import { withRouter } from "react-router";
 import { css } from "glamor";
@@ -71,27 +71,29 @@ const SettingPage = (props) => {
   return (
     <div className="container mx-auto my-8">
       <div className="flex items-center justify-start mb-10">
-        <div className="w-3/12">
-          <H3 className="m-0">Settings</H3>
-        </div>
-        <div className="w-6/12 flex justify-center">
-          <Menu
-            mode="horizontal"
-            onClick={handleClickChangeCurrentKey}
-            selectedKeys={[currentTab]}
-            {...fullTabMenuStyles}
-          >
-            <Menu.Item key="profile">
-              <Link to={`${url}/profile`}>Profile</Link>
-            </Menu.Item>
-            <Menu.Item key="security" onClick={() => setCurrentTab("security")}>
-              <Link to={`${url}/security`}>Security</Link>
-            </Menu.Item>
-            <Menu.Item key="billing" onClick={() => setCurrentTab("billing")}>
-              <Link to={`${url}/billing`}>Billing</Link>
-            </Menu.Item>
-          </Menu>
-        </div>
+        <Row className="w-full">
+          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+            <H3 className="m-0">Settings</H3>
+          </Col>
+          <Col xs={24} sm={24} md={18} lg={18} xl={18}>
+            <Menu
+              mode="horizontal"
+              onClick={handleClickChangeCurrentKey}
+              selectedKeys={[currentTab]}
+              {...fullTabMenuStyles}
+            >
+              <Menu.Item key="profile">
+                <Link to={`${url}/profile`}>Profile</Link>
+              </Menu.Item>
+              <Menu.Item key="security" onClick={() => setCurrentTab("security")}>
+                <Link to={`${url}/security`}>Security</Link>
+              </Menu.Item>
+              <Menu.Item key="billing" onClick={() => setCurrentTab("billing")}>
+                <Link to={`${url}/billing`}>Billing</Link>
+              </Menu.Item>
+            </Menu>
+          </Col>
+        </Row>
       </div>
       <Switch>
         <Route path={`${path}/:screenName`}>{generateScreens()}</Route>
